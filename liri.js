@@ -4,10 +4,14 @@ let keys = require("./keys.js");
 let  fs = require('fs');
 let Spotify = require('node-spotify-api');
 let spotify = new Spotify(keys.spotify);
-let request = require("request");
+let request = require ("request");
 let liri = process.argv[2];
 let name = process.argv[3];
 console.log(keys);
+
+
+
+//// look up switch? case?  as a an expession switch instead of if else.//
 
 if (liri === 'spotify-this-song'){
     spotifyThis();
