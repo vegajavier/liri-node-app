@@ -1,6 +1,11 @@
 require("dotenv").config();
 let keys = require("./keys.js");
 let Spotify = require('node-spotify-api');
+let request = require("request");
+
+request("http://www.omdbapi.com/?i=tt3896198&apikey=79176496", function(error,response,body){
+
+})
 
 
 function spotifyMe(){
