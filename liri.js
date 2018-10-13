@@ -2,9 +2,9 @@ require("dotenv").config();
 
 let keys = require("./keys.js");
 let  fs = require('fs');
-let Spotify = require('node-spotify-api');
-let spotify = new Spotify(keys.spotify);
+let Spotify = require("node-spotify-api");
 let request = require ("request");
+let inquirer = require('inquirer')
 let liri = process.argv[2];
 let name = process.argv[3];
 console.log(keys);
@@ -27,7 +27,7 @@ console.log(keys);
 // }
   //// example from MDN LOOK OVER THE DOCS AGAIN!!!!
 
-  
+
 
 if (liri === 'spotify-this-song'){
 	spotifyThis();
@@ -45,7 +45,6 @@ function movieThis() {
 			let movie = JSON.parse(body);
 			if(!err && response.statusCode === 200){
 				let movieInfo =
-				"----------------------------" + "\n" +
 				"Title: " + movie.Title + "\n" +
 				"Release: " + movie.Year + "\n" +
 				"Ratings: " + movie.imdbRating + " \n" +
@@ -54,7 +53,6 @@ function movieThis() {
 				"Language: " + movie.Language + "\n" +
 				"Plot: " + movie.Plot + "\n" +
 				"Actors: " + movie.Actors + "\n" +
-				"-----------------------------" + "\n"
 					console.log(movieInfo);
 		}})
 }
