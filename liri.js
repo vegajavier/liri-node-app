@@ -38,6 +38,12 @@ if (liri === 'spotify-this-song'){
 };
 
 function movieThis() {
+	let movies = process.argv[3];
+
+	if(!movies){
+		movies = "Mr.Nobody";
+	};
+
 	let queryURL = "http://www.omdbapi.com/?i=" + name + "tt3896198&apikey=79176496";
 		request (queryURL, function(err, response, body){
 			let movie = JSON.parse(body);
