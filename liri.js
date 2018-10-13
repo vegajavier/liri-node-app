@@ -1,13 +1,13 @@
 require("dotenv").config();
 
 let keys = require("./keys.js");
+console.log(keys);
 let  fs = require('fs');
 let Spotify = require("node-spotify-api");
+let spotify = new Spotify(keys.spotify);
 let request = require ("request");
-let inquirer = require('inquirer')
 let liri = process.argv[2];
-let name = process.argv[3];
-console.log(keys);
+
 
 
 
@@ -25,9 +25,7 @@ console.log(keys);
 //	default:
 //	  console.log('Sorry, we are out of ' + expr + '.');
 // }
-  //// example from MDN LOOK OVER THE DOCS AGAIN!!!!
-
-
+  //// example from MDN LOOK OVER THE DOCS AGAIN!!!!///
 
 if (liri === 'spotify-this-song'){
 	spotifyThis();
@@ -56,3 +54,18 @@ function movieThis() {
 					console.log(movieInfo);
 		}})
 }
+
+fs.appendFile("log.txt", "Title: ", "Release: ","Ratings: ", "Rotten Tomatoes Rating: ", "Country: ", "Language: ","Plot: ","Actors: ")
+	if(err){
+		return console.log("error: " + err);
+	};
+
+
+
+// inquirer? 
+//function movieThis(){
+//	inquirer.prompt([{
+//		type: "input",
+//		message: "What movie would you like to search?",
+//	}])
+// }

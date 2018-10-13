@@ -6,6 +6,9 @@ exports.spotify = {
 
 };
 
+// ombdapi
+      http://www.omdbapi.com/?i=tt3896198&apikey=79176496
+
 
 
 exports.twitter = {
